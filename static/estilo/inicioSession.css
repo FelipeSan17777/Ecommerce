@@ -1,0 +1,63 @@
+/* Estilos para el formulario de login */
+.login-form {
+    max-width: auto;
+    background-color: #ffffff; /* Fondo morado oscuro */
+    border-radius: 16px;
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+}
+
+/* Título del login */
+.login-form h2 {
+    color: #3c0d86; /* Morado suave */
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+.login-form .form-control {
+    background-color: #ffffff;
+    border: 1px solid #372b91;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.login-form .form-control::placeholder {
+    color: #480f8a;
+    font-size: 0.9rem;
+}
+
+.login-form .form-control:focus {
+    border-color: #2d0c79;
+}
+
+/* Botón de iniciar sesión */
+.btn-login {
+    background-color: #2e0777;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3e0f97;
+}
+
+/* Enlace de registro */
+.link-registrarse {
+    color: #3d0b80;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-registrarse:hover {
+    color: #43077a;
+    text-decoration: underline;
+}

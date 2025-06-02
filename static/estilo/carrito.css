@@ -1,0 +1,173 @@
+.container-carrito {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: linear-gradient(135deg, #2c2a4a, #1e1e2f);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 20px rgba(128, 0, 128, 0.5);
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #bb86fc; /* morado claro neón */
+    margin-bottom: 2rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.table-carrito {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 1rem;
+}
+
+.table-carrito thead {
+    background-color: #6a1b9a;
+    color: #f3e5f5;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.table-carrito thead th {
+    padding: 1rem 1.2rem;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.table-carrito tbody tr {
+    background: #3a3170;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.table-carrito tbody tr:hover {
+    background-color: #5e439e;
+}
+
+.table-carrito td {
+    padding: 1rem 1.2rem;
+    text-align: center;
+    color: #ddd;
+    vertical-align: middle;
+    border-bottom: none;
+}
+
+.btn-eliminar {
+    background-color: #e55353; /* rojo suave */
+    border: none;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #b03c3c;
+    transform: scale(1.05);
+}
+
+.total-carrito {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #d1b3ff; /* morado pastel */
+    letter-spacing: 1px;
+}
+
+.btn-comprar {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(90deg, #9b59b6, #7d3c98);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.6);
+}
+
+.btn-comprar:hover {
+    background: linear-gradient(90deg, #7d3c98, #6a1b9a);
+    box-shadow: 0 7px 20px rgba(109, 41, 133, 0.9);
+}
+
+.encabezado-carrito {
+    background-color: #401296;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-radius: 20px;
+}
+
+.encabezado-carrito tr {
+    background: linear-gradient(90deg, #000000, #000000);
+}
+
+.encabezado-carrito th {
+    padding: 1.2rem;
+    background-color: #401296;
+    text-align: center;
+    border-bottom: 1px solid #3e3e3e;
+    font-weight: 600;
+    color: #f8f4f4;
+    
+}
+
+/* Separador fino debajo */
+.table-carrito thead th:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .table-carrito thead {
+        display: none;
+    }
+    .table-carrito, .table-carrito tbody, .table-carrito tr, .table-carrito td {
+        display: block;
+        width: 100%;
+    }
+    .table-carrito tr {
+        margin-bottom: 1.5rem;
+        background-color: #3a3170;
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+    }
+    .table-carrito td {
+        text-align: left;
+        padding-left: 45%;
+        position: relative;
+        color: #ddd;
+        font-weight: 600;
+    }
+    .table-carrito td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1.3rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        padding-left: 0.5rem;
+        font-weight: 700;
+        color: #bb86fc;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+}

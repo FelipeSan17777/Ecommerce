@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'estilo/estilo1.css' %}">
+    {% block estilos %}{% endblock %}
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+    <header class="bg-white border-bottom">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <img src="{% static 'img/logoDesing.png' %}" alt="Logo Desing" height="450px">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productosDropdown">
+                            <li><a class="dropdown-item" href="/chaqueta">Chaquetas</a></li>
+                            <li><a class="dropdown-item" href="/poleras">Poleras</a></li>
+                            <li><a class="dropdown-item" href="/pantalones">Pantalones</a></li>
+                            <li><a class="dropdown-item" href="/polerones">Polerones</a></li>
+                            <li><a class="dropdown-item" href="/abrigos">Abrigos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/iniciar">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carrito">Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2025 Desing. Todos los derechos reservados.</p>
+            <p>Síguenos:
+                <a href="#">Instagram</a> |
+                <a href="#">Facebook</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

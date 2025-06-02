@@ -1,0 +1,24 @@
+.card-title {
+    font-size: 1.2rem;
+    color: #6c5ce7;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #2d3436;
+}
+
+.badge {
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+.btn-primary {
+    background-color: #6c5ce7;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #5e50d6;
+}

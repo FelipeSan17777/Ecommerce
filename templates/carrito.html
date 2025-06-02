@@ -1,0 +1,61 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/carrito.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section class="container my-5">
+        <h2 class="mb-4 text-center">Tu Carrito de Compras - Desing Shop</h2>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead class="encabezado-carrito">
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col" class="text-center">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="d-flex align-items-center">
+                            <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-1"></h5>
+                                <small class="text-muted"></small>
+                            </div>
+                        </td>
+                        <td>
+                            <form method="POST" action="">
+                                <input type="number" name="cantidad" min="1" max="99" value="{{ item.cantidad }}" class="form-control form-control-sm" style="width: 70px;">
+                                <button type="submit" class="btn btn-sm btn-outline-primary mt-2">Actualizar</button>
+                            </form>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-center">
+                            <form method="POST" action="">
+                                <button type="submit" class="btn btn-sm btn-danger" title="Eliminar producto">
+                                    <i class="bi bi-trash"></i> <!-- icono de basura (Bootstrap Icons) -->
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-end align-items-center mt-4">
+            <h4 class="me-4">Total: <span class="text-primary"></span></h4>
+            <a href="" class="btn btn-success btn-lg">Proceder al Pago</a>
+        </div>
+
+
+        <div class="alert alert-info text-center" role="alert">
+            Tu carrito está vacío. <a href="">Ver productos</a> para agregar ropa increíble.
+        </div>
+    </section>
+{% endblock %}
