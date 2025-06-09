@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #2c0674;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+/* Estilo para el header */
+header.custom-header {
+    background-color: #ffffff;
+    border-bottom: 3px solid #6c5ce7; /* Línea inferior morada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    padding: 1rem 0;
+}
+
+/* Estilos de navegación */
+.nav-link {
+    color: #2e186d !important;     /* Fuerza el morado oscuro */
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #000000 !important;     /* Negro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* Estilo del logo */
+.logo-img {
+    height: 120px;
+    object-fit: contain;
+}
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #3a05b8;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: #350a7a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #000000;
+}
+
+main {
+    flex: 1; 
+    padding: 20px; 
+    margin-bottom: 140px;
+}
+

@@ -1,0 +1,36 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/admin.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-4 text-dark">Panel de Administración</h1>
+    <div class="row justify-content-center g-4">
+        <div class="col-12 col-md-3">
+            <a href="{% url 'pantalones' %}" class="admin-card">
+                <i class="bi bi-box-seam"></i>
+                <p>Ver Productos</p>
+            </a>
+        </div>
+        <div class="col-12 col-md-3">
+            <a href="#" class="admin-card">
+                <i class="bi bi-plus-circle"></i>
+                <p>Agregar Producto</p>
+            </a>
+        </div>
+        <div class="col-12 col-md-3">
+            <a href="{% url 'ver_usuarios' %}" class="admin-card">
+                <i class="bi bi-people"></i>
+                <p>Usuarios</p>
+            </a>
+        </div>
+        <div class="col-12 col-md-3">
+            <a href="#" class="admin-card">
+                <i class="bi bi-receipt"></i>
+                <p>Pedidos</p>
+            </a>
+        </div>
+    </div>
+{% endblock %}

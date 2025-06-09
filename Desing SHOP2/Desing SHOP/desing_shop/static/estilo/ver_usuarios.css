@@ -1,0 +1,29 @@
+.usuarios-container {
+        padding: 3rem 1rem;
+    }
+
+    .usuarios-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #5a189a;
+        margin-bottom: 2rem;
+    }
+
+    .table-custom {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .table th {
+        background-color: #7209b7;
+        color: white;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+    .user-row:hover {
+        background-color: #f0e6ff;
+    }

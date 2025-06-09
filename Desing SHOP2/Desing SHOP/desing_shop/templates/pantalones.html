@@ -1,0 +1,20 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/pantalones.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="productos-container">
+        {% for p in pantalones %}
+        <div class="producto-card">
+            <a href="{% url 'detalle_pantalon' p.id %}">
+                <img src="{% static 'img/' %}{{p.imagen}}" alt="{{ p.nombre }}" class="producto-img">
+            </a>
+            <p class="producto-nombre">{{ p.nombre }}</p>
+            <p class="producto-nombre">${{ p.precio }}</p>
+        </div>
+        {% endfor %}
+    </div>                
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/registrar.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="registro-container">
+        <h2>Registro de Usuario</h2>
+        <form method="POST" action="" class="registro-form">
+            {% csrf_token %}
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej: 1234567890" required>
+            <small>Solo números, 10 dígitos.</small>
+
+            <label for="password1">Contraseña</label>
+            <input type="password" id="password1" name="password1" required minlength="6">
+
+            <label for="password2">Confirmar contraseña</label>
+            <input type="password" id="password2" name="password2" required minlength="6">
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+{% endblock %}

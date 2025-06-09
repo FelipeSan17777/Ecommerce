@@ -1,0 +1,42 @@
+{% extends './plantillas/base.html' %}
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/ver_usuarios.css' %}">
+{% endblock %}
+
+
+{% block main %}
+<div class="container usuarios-container">
+    <h2 class="text-center usuarios-title">Usuarios Registrados</h2>
+    <div class="table-responsive table-custom">
+        <table class="table table-striped text-center align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in usuarios %}
+                    <tr class="user-row">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.nombre_usuario }}</td>
+                        <td>{{ user.correo }}</td>
+                        <td>{{ user.telefono }}</td>
+                        <td>
+                            {% if user.tipo_usuario == 'admin' %}
+                                <span class="badge bg-danger">Admin</span>
+                            {% else %}
+                                <span class="badge bg-secondary">Usuario</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

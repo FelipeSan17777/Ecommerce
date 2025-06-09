@@ -1,0 +1,19 @@
+.img-pantalon {
+    width: 90%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.btn-morado {
+    background-color: #440372;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-morado:hover {
+    background-color: #5a0099;
+}
