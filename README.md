@@ -37,6 +37,6 @@
 descargar e instalar xampp para posteriormente correrlo
 -- bash
 git clone https://github.com/tuusuario/design-shop.git
-cd design-shop
+cd Ecommerce
 pip install django
 python manage.py runserver
