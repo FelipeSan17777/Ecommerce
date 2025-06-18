@@ -31,7 +31,7 @@
 
 ## Instalación y Configuración
 
-### 1. Clona el repositorio
+###  Como hacerlo funcionar
 
 ```
 descargar e instalar xampp para posteriormente correrlo
