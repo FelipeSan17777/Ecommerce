@@ -1,0 +1,68 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/faq.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="container mt-5 mb-5">
+  <h2 class="titulo-seccion">Preguntas Frecuentes</h2>
+
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+          ¿Cómo puedo realizar un pedido?
+        </button>
+      </h2>
+      <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Puedes agregar productos al carrito y luego confirmar tu pedido desde la sección "Carrito de Compras". Deberás ingresar tu nombre y dirección para completar el proceso.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+          ¿Qué métodos de pago aceptan?
+        </button>
+      </h2>
+      <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Actualmente aceptamos pagos con tarjeta de crédito, débito y Mercado Pago.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+          ¿Cuánto tarda el envío?
+        </button>
+      </h2>
+      <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          El tiempo de entrega varía según tu ubicación, pero generalmente demora entre 2 y 5 días hábiles.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+          ¿Puedo cambiar o devolver un producto?
+        </button>
+      </h2>
+      <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Sí, puedes solicitar cambios o devoluciones dentro de los primeros 10 días luego de recibir tu pedido, siempre que el producto esté en buen estado.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

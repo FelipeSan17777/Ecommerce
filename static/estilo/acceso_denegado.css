@@ -1,0 +1,36 @@
+.denegado-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .denegado-titulo {
+    font-size: 32px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+  }
+
+  .denegado-mensaje {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .boton-acceso {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6118ed;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .boton-acceso:hover {
+    background-color: #4c12ba;
+  }

@@ -1,0 +1,61 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/politica.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="politica-container">
+  <h2 class="titulo-seccion">Política de Privacidad</h2>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Información que recopilamos</h3>
+    <p>
+      En Desing Shop recopilamos información personal como nombre, dirección, correo electrónico y número de teléfono solo cuando es necesario para procesar tus pedidos, crear tu cuenta o contactarte por temas relacionados con tu compra.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Uso de la información</h3>
+    <p>
+      Utilizamos tu información únicamente para fines comerciales relacionados con tu experiencia en Desing Shop: procesar pedidos, enviar actualizaciones, responder consultas o enviar promociones si lo has autorizado.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Protección de datos</h3>
+    <p>
+      Implementamos medidas de seguridad técnicas y administrativas para proteger tu información contra accesos no autorizados, pérdida o uso indebido. Tus datos están seguros con nosotros.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Cookies</h3>
+    <p>
+      Usamos cookies para mejorar tu experiencia en nuestro sitio web. Puedes configurar tu navegador para rechazarlas, pero algunas funciones podrían no estar disponibles.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Terceros</h3>
+    <p>
+      No compartimos tu información personal con terceros, excepto para servicios estrictamente necesarios como envíos o procesamiento de pagos, y siempre bajo acuerdos de confidencialidad.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Modificaciones</h3>
+    <p>
+      Nos reservamos el derecho de actualizar esta política en cualquier momento. Te notificaremos sobre cambios importantes mediante nuestro sitio web o por correo electrónico.
+    </p>
+  </div>
+
+  <div class="politica-bloque">
+    <h3 class="subtitulo">Contacto</h3>
+    <p>
+      Si tienes preguntas sobre nuestra política de privacidad, puedes escribirnos a <strong>contacto@desingshop.cl</strong>.
+    </p>
+  </div>
+</section>
+{% endblock %}

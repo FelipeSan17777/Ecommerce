@@ -1,0 +1,103 @@
+
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+
+
+.table {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.encabezado-carrito th {
+    background-color: #6118ed;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+
+.table img.img-thumbnail {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 6px 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+.btn-success {
+    background-color: #6118ed;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #4a0cb8;
+}
+
+h4 span.text-primary {
+    color: #6118ed !important;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .d-flex h4 {
+        margin-bottom: 15px;
+    }
+
+    .btn-success {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.total-text span:first-child {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.total-text .monto {
+    color: rgb(6, 209, 6);
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 8px;
+}

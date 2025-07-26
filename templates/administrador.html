@@ -1,0 +1,41 @@
+{% extends './plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+  <link rel="stylesheet" href="{% static 'estilo/admin.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block main %}
+  <h1 class="admin-title">Panel de Administración</h1>
+  <div class="admin-panel">
+    <a href="{% url 'ver_productos' %}" class="admin-button">
+      <i class="bi bi-box-seam"></i>
+      <span>Ver Productos</span>
+    </a>
+    <a href="{% url 'agregar_ropa' %}" class="admin-button">
+      <i class="bi bi-plus-circle"></i>
+      <span>Agregar Producto</span>
+    </a>
+    <a href="{% url 'ver_usuarios' %}" class="admin-button">
+      <i class="bi bi-people"></i>
+      <span>Usuarios</span>
+    </a>
+    <a href="{% url 'crear_categoria' %}" class="admin-button">
+      <i class="bi bi-tags"></i>
+      <span>Agregar Categoría</span>
+    </a>
+    <a href="{% url 'ver_categorias' %}" class="admin-button">
+      <i class="bi bi-pencil-square"></i>
+      <span>Editar Categorías</span>
+    </a>
+    <a href="{% url 'ver_pedidos' %}" class="admin-button">
+      <i class="bi bi-receipt"></i>
+      <span>Pedidos</span>
+    </a>
+    <a href="{% url 'cerrar_sesion' %}" class="admin-button logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Cerrar Sesión</span>
+    </a>
+  </div>
+{% endblock %}

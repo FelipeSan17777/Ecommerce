@@ -1,0 +1,52 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+{% block main %}
+<h2 class="titulo-pedidos">Mis Pedidos</h2>
+{% block estilos %}
+  <link rel="stylesheet" href="{% static 'estilo/mis_pedidos.css' %}">
+{% endblock %}
+{% if nombre_usuario %}
+  {% if pedidos_con_detalles %}
+    {% for item in pedidos_con_detalles %}
+      <div class="pedido-container">
+        <h3 class="pedido-id">Pedido #{{ item.pedido.id }}</h3>
+        <p><strong>Fecha:</strong> {{ item.pedido.fecha|date:"d/m/Y H:i" }}</p>
+        <p><strong>Dirección:</strong> {{ item.pedido.direccion_entrega }}</p>
+        <p><strong>Total:</strong> ${{ item.pedido.total }}</p>
+
+        <table class="tabla-pedidos">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Talla</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in item.detalles %}
+              <tr>
+                <td>{{ d.producto.nombre }}</td>
+                <td>{{ d.talla }}</td>
+                <td>{{ d.cantidad }}</td>
+                <td>${{ d.subtotal }}</td>
+                <td>
+                  {% if d.estado_entrega %} Entregado
+                  {% else %} Pendiente
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="sin-pedidos">No tienes pedidos aún.</p>
+  {% endif %}
+{% else %}
+  <p class="mensaje-login">Debes registrarte o iniciar sesión para ver el estatus de tus pedidos.</p>
+{% endif %}
+
+{% endblock %}

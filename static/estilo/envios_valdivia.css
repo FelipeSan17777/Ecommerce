@@ -1,0 +1,39 @@
+.envios-container {
+  max-width: 65rem;
+  margin: 5rem auto;
+  padding: 2rem;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.envios-titulo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.envios-bloque {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-left: 6px solid #6118ed;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.envios-bloque p,
+.envios-bloque ul {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  margin-bottom: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.envios-bloque ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  list-style-type: disc;
+}

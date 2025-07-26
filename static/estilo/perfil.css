@@ -1,0 +1,91 @@
+.icono-usuario-grande {
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.icono-usuario-grande img {
+    width: 120px;   
+    height: auto;  
+    border-radius: 50%; 
+    object-fit: cover;  
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+.perfil-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.perfil-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #bb86fc;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(186, 104, 200, 0.4);
+}
+
+
+.perfil-header h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 28px;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 10px;
+}
+
+
+.perfil-info p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #f1f1f1;
+}
+
+.perfil-info .label {
+    font-weight: bold;
+    color: #e0aaff;
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.btn-container a {
+    flex: 1 1 30%;
+    text-align: center;
+    padding: 12px;
+    background-color: #bb86fc;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-container a:hover {
+    background-color: #9a4bcc;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 500px) {
+    .btn-container a {
+        flex: 1 1 100%;
+    }
+}

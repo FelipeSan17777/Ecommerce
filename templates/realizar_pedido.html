@@ -1,0 +1,22 @@
+{% extends './plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+  <link rel="stylesheet" href="{% static 'estilo/pedido.css' %}">
+{% endblock %}
+
+{% block main %}
+  <h2>Confirmar Pedido</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre completo</label>
+      <input type="text" name="nombre" id="nombre" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección de entrega</label>
+      <input type="text" name="direccion" id="direccion" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+  </form>
+{% endblock %}

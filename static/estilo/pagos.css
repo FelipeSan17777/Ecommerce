@@ -1,0 +1,40 @@
+.gracias-container {
+  max-width: 480px;
+  margin: 5rem auto;
+  padding: 2.5rem 2rem;
+  background-color: rgb(238, 185, 214);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #3a0ca3;
+}
+
+.gracias-container h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #6118ed;
+}
+
+.gracias-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #341f97;
+}
+
+.gracias-container a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #6118ed;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.gracias-container a:hover {
+  background-color: #4a0cb8;
+  transform: scale(1.05);
+}

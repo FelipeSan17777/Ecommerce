@@ -1,0 +1,26 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/proceso_venta.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="proceso-container">
+    <h2 class="proceso-titulo">¿Cómo funciona nuestro proceso de venta?</h2>
+    <div class="proceso-bloque">
+        <p>En Design Shop queremos que tu experiencia de compra sea sencilla, segura y transparente. Aquí te explicamos paso a paso cómo realizamos el proceso de venta:</p>
+        <ul>
+            <li><strong>1. Selección de productos:</strong> Navega por nuestras categorías y elige las prendas que más te gusten.</li>
+            <li><strong>2. Agregar al carrito:</strong> Añade los productos a tu carrito de compras para revisar tu selección.</li>
+            <li><strong>3. Registro o ingreso:</strong> Crea una cuenta o inicia sesión para continuar con la compra.</li>
+            <li><strong>4. Datos de entrega:</strong> Completa tus datos de envío para que podamos entregar tu pedido.</li>
+            <li><strong>5. Pago seguro:</strong> Elige tu método de pago, incluyendo tarjetas y plataformas electrónicas seguras como Stripe.</li>
+            <li><strong>6. Confirmación de pedido:</strong> Recibirás un correo con el resumen y la confirmación de tu compra.</li>
+            <li><strong>7. Envío:</strong> Procesamos tu pedido y lo enviamos a la dirección indicada, con opciones estándar y exprés.</li>
+            <li><strong>8. Recepción y satisfacción:</strong> Cuando recibas tu pedido, esperamos que disfrutes tus productos y que vuelvas pronto.</li>
+        </ul>
+        <p>Si tienes dudas o necesitas ayuda durante el proceso, nuestro equipo de atención al cliente está listo para apoyarte.</p>
+    </div>
+</section>
+{% endblock %}

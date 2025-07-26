@@ -1,0 +1,40 @@
+{% extends './plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/perfil.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="perfil-wrapper">
+    <section class="perfil-card">
+
+        
+        <div class="icono-usuario-grande">
+            <img src="{% static 'img/usuario.png' %}" alt="Usuario" />
+        </div>
+
+        <div class="perfil-header">
+            <h2>Perfil de Usuario</h2>
+        </div>
+        <div class="perfil-info">
+            <p><span class="label">Usuario:</span> {{ usuario.nombre_usuario }}</p>
+            <p><span class="label">Correo:</span> {{ usuario.correo }}</p>
+            <p><span class="label">Teléfono:</span> {{ usuario.telefono }}</p>
+            <p><span class="label">Tipo:</span> {{ usuario.tipo_usuario|default:"No especificado" }}</p>
+        </div>
+
+        <div class="btn-container">
+            <div class="btn-left">
+                <a href="{% url 'inicio' %}" class="cerrar-sesion-btn">Volver</a>
+            </div>
+            <div class="btn-center">
+                <a href="{% url 'mis_pedidos' %}" class="cerrar-sesion-btn">Estatus de orden</a>
+            </div>
+            <div class="btn-right">
+                <a href="{% url 'cerrar_sesion' %}" class="cerrar-sesion-btn">Cerrar Sesión</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

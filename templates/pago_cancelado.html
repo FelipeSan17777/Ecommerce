@@ -1,0 +1,14 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/pagos.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="gracias-container">
+  <h2>Pago cancelado</h2>
+  <p>No se realizó el pago. Puedes intentarlo nuevamente.</p>
+  <a href="{% url 'carrito' %}">Volver al carrito</a>
+</div>
+{%endblock%}

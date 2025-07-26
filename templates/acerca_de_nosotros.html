@@ -1,0 +1,46 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/acerca_de_nosotros.css' %}">
+{% endblock %}
+
+{% block main %}
+<h2 class="titulo-seccion">Nosotros</h2>
+    <section>
+        <h3>Nuestra Historia</h3>
+        <p>
+            <strong>Design Shop</strong> nació con el sueño de crear un espacio donde la moda sea accesible, auténtica y versátil. Desde nuestros primeros pasos, nos propusimos vestir a personas reales con estilos que conecten con su día a día, su personalidad y sus metas.
+        </p>
+        <p>
+            Con una propuesta que fusiona lo <strong>urbano</strong>, lo <strong>clásico</strong> y lo <strong>moderno</strong>, en Design Shop ofrecemos colecciones pensadas para quienes buscan verse bien sin perder comodidad ni esencia. Cada prenda es seleccionada con cuidado, priorizando diseño, calidad y estilo.
+        </p>
+        <p>
+            A lo largo del tiempo hemos crecido gracias a la confianza de nuestros clientes. Nos hemos convertido en un referente para quienes valoran la moda que se adapta a diferentes estilos de vida, desde el ritmo acelerado de la ciudad hasta los momentos más relajados del fin de semana.
+        </p>
+        <p>
+            Nuestro compromiso es vestir a toda la familia: desde <strong>jóvenes y señoritas</strong> que quieren marcar tendencia, hasta <strong>adultos entre 30 y 45 años</strong> que buscan elegancia y funcionalidad, sin olvidar a <strong>niños y niñas</strong> con ropa cómoda, moderna y divertida.
+        </p>
+    </section>
+
+    <section>
+        <h3>Nuestra Filosofía</h3>
+        <p>
+            En Design Shop creemos que la moda es una forma de expresión. Por eso, no imponemos reglas: las rompemos con estilo. Nuestras colecciones están pensadas para adaptarse a ti, no al revés.
+        </p>
+        <p>
+            Ya sea que prefieras un look casual y relajado, un estilo elegante para la oficina, o prendas con actitud para destacar en la ciudad, aquí encontrarás lo que necesitas. Apostamos por una moda inclusiva, cómoda y con identidad propia.
+        </p>
+    </section>
+
+    <section>
+        <h3>¿Por qué elegir Design Shop?</h3>
+        <ul>
+            <li>Estilos urbanos, clásicos y modernos en un solo lugar.</li>
+            <li>Ropa para todas las edades: niños, jóvenes y adultos.</li>
+            <li>Calidad garantizada a precios accesibles.</li>
+            <li>Renovamos nuestras colecciones constantemente para estar a la moda.</li>
+            <li>Atención cercana y personalizada en cada compra.</li>
+        </ul>
+    </section>
+{% endblock %}

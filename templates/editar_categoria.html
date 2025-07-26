@@ -1,0 +1,48 @@
+{% extends './plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/editar_categoria.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+{% endblock %}
+
+{% block main %}
+<h2>Lista de Categorías</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+        <tr>
+            <td>{{ categoria.id }}</td>
+            <td>
+                <form method="post" action="{% url 'editar_categoria' categoria.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="text" name="nombre" value="{{ categoria.nombre }}" required>
+            </td>
+            <td>
+
+                    <button type="submit" name="guardar" title="Guardar cambios" class="icon-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                    </button>
+                </form>
+
+
+                <form method="post" action="{% url 'editar_categoria' categoria.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" name="eliminar" title="Eliminar categoría" class="icon-btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

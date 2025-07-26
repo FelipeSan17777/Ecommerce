@@ -1,0 +1,58 @@
+.admin-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.admin-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.admin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(238, 185, 214);;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 30px 15px;
+  transition: all 0.3s ease;
+  color: #333;
+  font-size: 18px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.admin-button i {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #6118ed;
+}
+
+.admin-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: #6118ed;
+}
+
+.admin-button.logout {
+  background-color: #fce4ec;
+  border-color: #f06292;
+}
+
+.admin-button.logout i {
+  color: #e91e63;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}

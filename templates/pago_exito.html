@@ -1,0 +1,15 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/pagos.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="gracias-container">
+  <h2>¡Gracias por tu compra!</h2>
+  <p>Tu pedido ha sido registrado exitosamente.</p>
+  <a href="{% url 'inicio' %}">Volver al inicio</a>
+</div>
+
+{%endblock%}

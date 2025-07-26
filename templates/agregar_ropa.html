@@ -1,0 +1,66 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/agregar_ropa.css' %}">
+{% endblock %}
+
+{% block main %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h2>Agregar Producto</h2>
+  
+  <div class="fila-arriba">
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" id="precio" min="0" required>
+    </div>
+
+    <div class="campo imagen-campo">
+      <label for="imagen">Imagen</label>
+      <input type="file" name="imagen" id="imagen" accept="image/*" required>
+    </div>
+  </div>
+
+  <div class="cantidades-container">
+    <div class="cantidad-group">
+      <label for="cantidad_xs">XS</label>
+      <input type="number" name="cantidad_xs" id="cantidad_xs" min="0" value="0">
+    </div>
+    <div class="cantidad-group">
+      <label for="cantidad_s">S</label>
+      <input type="number" name="cantidad_s" id="cantidad_s" min="0" value="0">
+    </div>
+    <div class="cantidad-group">
+      <label for="cantidad_m">M</label>
+      <input type="number" name="cantidad_m" id="cantidad_m" min="0" value="0">
+    </div>
+    <div class="cantidad-group">
+      <label for="cantidad_l">L</label>
+      <input type="number" name="cantidad_l" id="cantidad_l" min="0" value="0">
+    </div>
+    <div class="cantidad-group">
+      <label for="cantidad_xl">XL</label>
+      <input type="number" name="cantidad_xl" id="cantidad_xl" min="0" value="0">
+    </div>
+  </div>
+
+  <div class="campo">
+    <label for="categoria">Categoría</label>
+    <select name="categoria" id="categoria" required>
+      <option value="">Seleccione una categoría</option>
+      {% for c in categorias %}
+        <option value="{{ c.id }}">{{ c.nombre }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <button type="submit">Guardar Producto</button>
+  </div>
+</form>
+{% endblock %}

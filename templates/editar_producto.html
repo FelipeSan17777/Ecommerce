@@ -1,0 +1,65 @@
+{% extends 'plantillas/base.html' %}
+
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/editar_productos.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="form-container">
+  <h2 class="form-titulo">Editar Producto</h2>
+  <form method="POST">
+    {% csrf_token %}
+
+
+    <div class="fila-arriba">
+      <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+      </div>
+      <div class="campo">
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" name="precio" value="{{ producto.precio }}" required>
+      </div>
+      <div class="campo">
+        <label for="categoria">Categoría:</label>
+        <select name="categoria">
+          {% for c in categorias %}
+            <option value="{{ c.id }}" {% if c.id == producto.categoria.id %}selected{% endif %}>{{ c.nombre }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+  
+    <div class="cantidades-container">
+      <div class="cantidad-group">
+        <label>Cantidad XS:</label>
+        <input type="number" name="cantidad_xs" value="{{ producto.cantidad_xs }}">
+      </div>
+      <div class="cantidad-group">
+        <label>Cantidad S:</label>
+        <input type="number" name="cantidad_s" value="{{ producto.cantidad_s }}">
+      </div>
+      <div class="cantidad-group">
+        <label>Cantidad M:</label>
+        <input type="number" name="cantidad_m" value="{{ producto.cantidad_m }}">
+      </div>
+      <div class="cantidad-group">
+        <label>Cantidad L:</label>
+        <input type="number" name="cantidad_l" value="{{ producto.cantidad_l }}">
+      </div>
+      <div class="cantidad-group">
+        <label>Cantidad XL:</label>
+        <input type="number" name="cantidad_xl" value="{{ producto.cantidad_xl }}">
+      </div>
+    </div>
+
+    <button type="submit" name="guardar" class="btn-form">Guardar Cambios</button>
+<button type="submit" name="eliminar" class="btn-form" style="background-color: red;">Eliminar Producto</button>
+  </form>
+
+  <a href="{% url 'ver_productos' %}" class="link-volver">← Volver al listado</a>
+</div>
+{% endblock %}

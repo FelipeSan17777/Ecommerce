@@ -1,0 +1,15 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+{% block estilos %}
+  <link rel="stylesheet" href="{% static 'estilo/acceso_denegado.css' %}">
+{% endblock %}
+{% block main %}
+<div class="denegado-container">
+  <h2 class="denegado-titulo">¡Atención!</h2>
+  <p class="denegado-mensaje">
+    Para ver el <strong>estatus de tus pedidos</strong>, necesitas tener una cuenta y haber iniciado sesión.
+  </p>
+  <a href="{% url 'iniciar' %}" class="boton-acceso">Iniciar Sesión</a>
+</div>
+{% endblock %}
+

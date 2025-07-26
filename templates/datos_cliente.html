@@ -1,0 +1,21 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/datos_cliente.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<form method="post" class="entrega-form">
+  {% csrf_token %}
+  <h2>Datos de Entrega</h2>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="direccion" required>
+  
+  <button type="submit">Ir a pagar</button>
+</form>
+{%endblock%}

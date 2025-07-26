@@ -1,0 +1,27 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/pantalones.css' %}">
+{% endblock %}
+
+{% block main %}
+    {% if categoria %}
+        <h2 class="titulo-categoria">{{ categoria.nombre }}</h2>
+    {% endif %}
+    <div class="productos-container">
+        {% for p in pantalones %}
+            <div class="producto-card">
+                <a href="{% url 'detalle_pantalon' p.id %}">
+                    <img class="producto-img" src="{{ p.imagen.url }}" alt="{{ p.nombre }}">
+                </a>
+                    <div class="producto-info">
+                        <p class="producto-nombre">{{ p.nombre }}</p>
+                        <p class="producto-precio">${{ p.precio }}</p>
+                    </div>
+            </div>
+        {% empty %}
+            <h2 class="titulo-categoria">No hay productos disponibles en esta categoría.</h2>
+        {% endfor %}
+    </div>              
+{% endblock %}

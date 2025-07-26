@@ -1,0 +1,58 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/detalle.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-6 text-center">
+            <img src="{{ pantalon.imagen.url }}" alt="{{ pantalon.nombre }}" class="img-pantalon">
+        </div>
+
+        <div class="col-md-6">
+            <h2 class="mb-3">{{ pantalon.nombre }}</h2>
+
+            <p><strong>Tallas disponibles:</strong></p>
+
+            <form action="{% url 'agregar_al_carrito' pantalon.id %}" method="post" class="mt-3">
+                {% csrf_token %}
+                <ul>
+                {% for talla, cantidad in tallas_cantidades %}
+                    {% if cantidad > 0 %}
+                        <li>
+                            <label>
+                                <input type="radio" name="talla" value="{{ talla }}" required>
+                                <span>{{ talla }} ({{ cantidad }})</span>
+                            </label>
+                        </li>
+                        {% else %}
+                        <li style="color:gray; margin-bottom:10px;">
+                            {{ talla }} (Agotado)
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+
+                <div class="mb-3">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" name="cantidad" id="cantidad" min="1" value="1" class="form-control" style="width:100px;" required>
+                </div>
+                
+                <button type="submit" class="btn btn-morado">Agregar al carrito</button>
+            </form>
+
+            <p class="mt-3">
+                <strong>Precio:</strong> 
+                <span class="text-success h4">${{ pantalon.precio }}</span>
+            </p>
+
+            <a href="{% url 'pantalones' %}" class="btn btn-outline-dark mt-3">← Volver al catálogo</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/servicios.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="servicios-container">
+  <h2 class="titulo-seccion">Nuestros Servicios</h2>
+
+  <div class="servicio-card">
+    <h3 class="servicio-titulo">Asesoría Personalizada</h3>
+    <p>
+      Te ayudamos a encontrar el estilo que mejor se adapta a tu personalidad y necesidades. Nuestro equipo está capacitado para brindarte recomendaciones basadas en tendencias, ocasión y comodidad.
+    </p>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-titulo">Envíos a Todo Chile</h3>
+    <p>
+      Realizamos envíos rápidos y seguros a cualquier región del país. Empacamos tus productos con cuidado para que lleguen en perfectas condiciones, sin importar la distancia.
+    </p>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-titulo">Compras por Encargo</h3>
+    <p>
+      ¿Buscas una prenda específica? Contáctanos y haremos todo lo posible por conseguirla para ti. Ampliamos nuestro catálogo constantemente y también aceptamos sugerencias.
+    </p>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-titulo">Atención Post-Venta</h3>
+    <p>
+      Nuestro compromiso no termina cuando compras. Estamos disponibles para resolver dudas, cambios y devoluciones de forma rápida y amable. Tu satisfacción es nuestra prioridad.
+    </p>
+  </div>
+</section>
+{% endblock %}

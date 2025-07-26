@@ -1,0 +1,41 @@
+.servicios-container {
+  max-width: 65rem;
+  margin: 5rem auto;
+  padding: 2rem;
+  color: white;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.servicio-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 6px solid #6118ed;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(97, 24, 237, 0.2);
+}
+
+.servicio-titulo {
+  font-size: 1.6rem;
+  color: #d6b4ff;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.servicio-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}

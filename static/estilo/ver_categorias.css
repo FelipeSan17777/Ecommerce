@@ -1,0 +1,74 @@
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+
+table {
+    width: 90%;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background-color: white; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+thead th {
+    background-color: #6118ed;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr {
+    background-color: white; 
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f0ff; 
+}
+
+tbody td {
+    padding: 10px;
+    color: #333; 
+}
+
+
+td a {
+    text-decoration: none;
+    color: #6118ed;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+
+.editar-botones {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+
+.btn-editar {
+    background-color: #6118ed;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: #4a0cb8;
+}

@@ -1,0 +1,64 @@
+{% extends 'plantillas/base.html' %}
+
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/detalle_pedido.css' %}">
+{% endblock %}
+
+{% block main %}
+<h2 class="detalle-pedido">Detalle del Pedido {{ pedido.id }}</h2>
+
+<div class="contenido-flex">
+
+    <div class="info-box">
+        <dl>
+            <dt>Cliente:</dt><dd>{{ pedido.nombre_cliente }}</dd>
+            <dt>Dirección:</dt><dd>{{ pedido.direccion_entrega }}</dd>
+            <dt>Fecha:</dt><dd>{{ pedido.fecha|date:"d/m/Y H:i" }}</dd>
+            <dt>Total:</dt><dd>${{ pedido.total }}</dd>
+        </dl>
+    </div>
+
+
+    <div class="productos-box">
+        <h2 class="productos-pedido">Productos del pedido</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Talla</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Estado de entrega</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for detalle in detalles %}
+                    <tr>
+                        <td>{{ detalle.producto.nombre }}</td>
+                        <td>{{ detalle.talla }}</td>
+                        <td>{{ detalle.cantidad }}</td>
+                        <td>${{ detalle.subtotal }}</td>
+                        <td>{% if detalle.estado_entrega %}Entregado{% else %}Pendiente{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <div class="boton-eliminar-wrapper">
+            <form method="post" action="{% url 'marcar_entregado' pedido.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-eliminar">Entregar Pedido</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="volver-container">
+    <a href="{% url 'ver_pedidos' %}">Volver a lista de pedidos</a>
+</div>
+
+{% endblock %}

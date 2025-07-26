@@ -1,0 +1,55 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/carrito.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section class="container my-5">
+        <h2 class="mb-4 text-center">Carro de Compras</h2>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead class="encabezado-carrito">
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col" class="text-center">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if carrito %}
+                        {% for key, item in carrito.items %}
+                            <tr>
+                                <td class="d-flex align-items-center">
+                                    <img src="/media/{{ item.imagen }}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                                    <div>
+                                        <h5 class="mb-1">{{ item.nombre }}</h5>
+                                    </div>
+                                </td>
+                                <td>{{ item.cantidad }}</td>
+                                <td>${{ item.precio }}</td>
+                                <td>${{ item.subtotal }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'quitar_del_carrito' key %}" class="btn btn-sm btn-danger" title="Eliminar producto">
+                                        <i class="bi bi-trash"></i> Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">Tu carrito está vacío</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+    </div>
+        <div class="d-flex justify-content-end align-items-center mt-4">
+            <h4 class="total-text me-4"><span>Total:</span> <span class="monto">${{ total }}</span></h4>
+            <a href="{% url 'datos_cliente' %}" class="btn btn-success btn-lg">Proceder al Pago</a>
+        </div>
+    </section>
+{% endblock %}

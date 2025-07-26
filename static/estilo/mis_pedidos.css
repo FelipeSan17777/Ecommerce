@@ -1,0 +1,45 @@
+.titulo-pedidos {
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.pedido-container {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pedido-id {
+  color: #6118ed;
+  margin-bottom: 1rem;
+}
+
+.tabla-pedidos {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.tabla-pedidos thead tr {
+  background-color: #6118ed;
+  color: white;
+}
+
+.tabla-pedidos th, .tabla-pedidos td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.sin-pedidos, .mensaje-login {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 3rem;
+}

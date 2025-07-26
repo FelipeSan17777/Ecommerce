@@ -1,0 +1,22 @@
+{% extends './plantillas/base.html' %}
+
+{% load static %}
+{% block estilos %}
+  <link rel="stylesheet" href="{% static 'estilo/envios_valdivia.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="envios-container">
+  <h2 class="envios-titulo">Envíos en Valdivia</h2>
+  <div class="envios-bloque">
+    <p>En Design Shop nos comprometemos a que tus pedidos lleguen rápido y seguro a cualquier punto de Valdivia.</p>
+    <p>Ofrecemos dos modalidades de envío dentro de Valdivia:</p>
+    <ul>
+      <li><strong>Envío estándar:</strong> Entrega en 2 a 4 días hábiles con un costo accesible.</li>
+    </ul>
+    <p>Todos los envíos son cuidadosamente embalados para proteger tus productos y asegurar que lleguen en perfectas condiciones.</p>
+    <p>Para pedidos superiores a $50.000 el envío estándar es gratuito dentro de Valdivia.</p>
+    <p>Si tienes alguna consulta sobre el estado de tu envío, puedes contactarnos vía correo electrónico o teléfono, y te ayudaremos con gusto.</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+.usuarios-container {
+    padding: 3rem 1rem;
+}
+
+.usuarios-title {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.table-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0; 
+    margin: 0;
+}
+
+
+.table th {
+    background-color: #7209b7;
+    color: white;
+    border: none;
+}
+
+
+.table td {
+    vertical-align: middle;
+    border: none;
+    background-color: white;
+}
+
+
+.user-row:hover {
+    background-color: #f0e6ff;
+}
+
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}

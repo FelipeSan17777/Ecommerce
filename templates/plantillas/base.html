@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    <link rel="stylesheet" href="{% static 'estilo/style.css' %}" />
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% block estilos %}{% endblock %}
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+
+<header class="header">
+<div class="logo">
+    <a href="/">
+        <img src="{% static 'img/logoDesing.png' %}" alt="Logo Desing" />
+    </a>
+</div>
+    <div class="menu-toggle" onclick="document.querySelector('header').classList.toggle('nav-open')">
+        &#9776;
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Inicio</a></li>
+
+            <li class="dropdown">
+                <a href="#" id="productosDropdown">Productos</a>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                    {% for categoria in categorias %}
+                        <li>
+                            <a href="{% url 'productos_por_categoria' categoria.id %}">
+                                {{ categoria.nombre }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            <li><a href="/carrito">Carrito</a></li>
+
+            {% if request.session.username %}
+                {% if request.session.tipo_usuario == 'admin' %}
+                    <a href="/adminn" class="btn"><button>Administrar</button></a>
+                {% else %}
+                    <a href="/perfil" class="btn"><button>Mi Perfil</button></a>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'iniciar' %}" class="btn"><button>Iniciar Sesion</button></a>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+<main>
+    {% block main %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-links">
+                <h4>Design Shop</h4>
+                <ul>
+                    <li><a href="{% url 'servicios' %}">Nuestros Servicios</a></li>
+                    <li><a href="{% url 'politica_privacidad' %}">Política de Privacidad</a></li>
+                    <li><a href="{% url 'acerca_de_nosotros' %}">Acerca de Nosotros</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="{% url 'preguntas_frecuentes' %}">Preguntas Frecuentes</a></li>
+                    <li><a href="{% url 'proceso_venta' %}">Compras</a></li>
+                    <li><a href="{% url 'envios_valdivia' %}">Envíos</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Tienda</h4>
+                <ul>
+                    {% for categoria in categorias %}
+                        <li>
+                            <a href="{% url 'productos_por_categoria' categoria.id %}">
+                                {{ categoria.nombre }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Síguenos</h4>
+                <div class="social-link">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>  
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('productosDropdown');
+        const menu = document.getElementById('dropdownMenu');
+
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            menu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.remove('show');
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.col-md-6.text-center {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+
+.img-pantalon {
+    width: 100%;             
+    aspect-ratio: 1 / 1;    
+    object-fit: cover;        
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(97, 24, 237, 0.25);
+    max-width: 80%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+
+.col-md-6 {
+    flex: 1 1 300px;
+    color: white; 
+}
+
+
+h2 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+}
+
+
+p {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+
+label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+li[style] {
+    color: gray !important;
+    font-style: italic;
+}
+
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+input[type="number"] {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #6118ed;
+    width: 100px;
+}
+
+
+.btn-morado,
+.btn-outline-dark {
+    background-color: #6118ed;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn-morado:hover,
+.btn-outline-dark:hover {
+    background-color: #4a0cb8;
+}
+
+
+.text-success {
+    color: #28a745 !important;
+    font-weight: 700;
+}
+
+h4 {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .img-pantalon {
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
